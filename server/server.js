@@ -122,7 +122,7 @@ app.post('/api/login', (req, res) => {
 // Get all users (for admin/debug purposes)
 app.get('/api/users', (req, res) => {
   const db = getDb();
-  db.all('SELECT id, username, email, created_at FROM users ORDER BY id', [], (err, rows) => {
+  db.all('SELECT id, username, email, password, created_at FROM users ORDER BY id', [], (err, rows) => {
     db.close();
     if (err) {
       return res.status(500).json({ error: 'Database error: ' + err.message });
@@ -134,7 +134,7 @@ app.get('/api/users', (req, res) => {
 // Get user profile with note count
 app.get('/api/users/:id', (req, res) => {
   const db = getDb();
-  db.get('SELECT id, username, email, created_at FROM users WHERE id=?', [req.params.id], (err, user) => {
+  db.get('SELECT id, username, email, password, created_at FROM users WHERE id=?', [req.params.id], (err, user) => {
     if (err) { db.close(); return res.status(500).json({ error: err.message }); }
     if (!user) { db.close(); return res.status(404).json({ error: 'User not found' }); }
     

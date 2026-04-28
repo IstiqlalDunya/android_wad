@@ -64,21 +64,21 @@ const DrawerNavigator = () => (
       drawerActiveTintColor: Colors.primary,
       drawerActiveBackgroundColor: Colors.primaryLight,
       drawerItemStyle: { borderRadius: 10 },
-      drawerLabelStyle: { fontWeight: '600' },
+      drawerLabelStyle: { fontWeight: '600', fontSize: 18 },
     }}
   >
     <Drawer.Screen
       name="My Notes"
       component={TabNavigator}
       options={{
-        drawerIcon: ({ color, size }) => <Icons name="document-text-outline" size={size} color={color} />,
+        drawerIcon: ({ color, size }) => <Icons name="document-text-outline" size={30} color={color} />,
       }}
     />
     <Drawer.Screen
       name="Profile"
       component={ProfileScreen}
       options={{
-        drawerIcon: ({ color, size }) => <Icons name="person-outline" size={size} color={color} />,
+        drawerIcon: ({ color, size }) => <Icons name="person-outline" size={30} color={color} />,
       }}
     />
   </Drawer.Navigator>
