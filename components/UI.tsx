@@ -92,29 +92,7 @@ export const NoteCard = (props: any) => {
   );
 };
 
-// ─── RichTextToolbar ──────────────────────────────────────────────────────────
-interface ToolbarProps {
-  onBold: () => void;
-  onItalic: () => void;
-  onBullet: () => void;
-}
 
-export const RichTextToolbar = ({ onBold, onItalic, onBullet }: ToolbarProps) => (
-  <View style={toolbarStyles.toolbar}>
-    <TouchableOpacity style={toolbarStyles.toolBtn} onPress={onBold} activeOpacity={0.7}>
-      <Text style={toolbarStyles.toolBtnBold}>B</Text>
-    </TouchableOpacity>
-    <TouchableOpacity style={toolbarStyles.toolBtn} onPress={onItalic} activeOpacity={0.7}>
-      <Text style={toolbarStyles.toolBtnItalic}>I</Text>
-    </TouchableOpacity>
-    <TouchableOpacity style={toolbarStyles.toolBtn} onPress={onBullet} activeOpacity={0.7}>
-      <Text style={toolbarStyles.toolBtnText}>• List</Text>
-    </TouchableOpacity>
-    <View style={{ flex: 1, alignItems: 'flex-end' }}>
-      <Text style={toolbarStyles.hintText}>**bold**  *italic*</Text>
-    </View>
-  </View>
-);
 
 // ─── FormattedText (for NoteView) ────────────────────────────────────────────
 type InlinePart = { text: string; bold: boolean; italic: boolean };
@@ -160,7 +138,7 @@ export const FormattedText = ({ content }: { content: string }) => {
   );
 };
 
-// ─── Styles ───────────────────────────────────────────────────────────────────
+// ─── Styles ───
 const buttonStyles = StyleSheet.create({
   button: {
     marginVertical: 6,
@@ -176,7 +154,7 @@ const buttonStyles = StyleSheet.create({
   },
   buttonText: {
     color: 'white',
-    fontSize: 15,
+    fontSize: 18,
     fontWeight: '700',
     letterSpacing: 0.3,
   },

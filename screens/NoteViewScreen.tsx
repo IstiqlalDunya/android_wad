@@ -21,7 +21,7 @@ const NoteViewScreen = ({ route, navigation }: any) => {
   const loadNote = () => {
     fetch(`${Config.settings.serverPath}/api/notes/detail/${noteId}`)
       .then((r) => { if (!r.ok) throw new Error('Failed to fetch'); return r.json(); })
-      .then((data) => { setNote(data); navigation.setOptions({ title: data?.title || 'Note' }); })
+      .then((data) => { setNote(data); navigation.setOptions({ title:  'Note' , headerTitleStyle: { fontSize: 24 } }); })
       .catch(console.error);
   };
 
@@ -114,14 +114,14 @@ const NoteViewScreen = ({ route, navigation }: any) => {
             style={[styles.actionBtn, { backgroundColor: Colors.primaryLight, borderColor: Colors.primary }]}
             onPress={() => navigation.navigate('NoteEdit', { noteId, refresh: () => { loadNote(); refresh(); }, socket })}
           >
-            <Icons name="create-outline" size={18} color={Colors.primary} />
+            <Icons name="create-outline" size={20} color={Colors.primary} />
             <Text style={[styles.actionBtnText, { color: Colors.primary }]}>Edit</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={[styles.actionBtn, { backgroundColor: '#FEF2F2', borderColor: Colors.danger }]}
             onPress={handleDelete}
           >
-            <Icons name="trash-outline" size={18} color={Colors.danger} />
+            <Icons name="trash-outline" size={20} color={Colors.danger} />
             <Text style={[styles.actionBtnText, { color: Colors.danger }]}>Delete</Text>
           </TouchableOpacity>
         </View>
@@ -234,7 +234,7 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
   },
   actionBtnText: {
-    fontSize: 14,
+    fontSize: 18,
     fontWeight: '700',
   },
 });

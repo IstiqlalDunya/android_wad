@@ -307,7 +307,7 @@ const ProfileScreen = ({ navigation }: any) => {
               />
 
               <InputWithLabel
-                label="Current Password *"
+                label="Current Password"
                 value={currentPassword}
                 onChangeText={setCurrentPassword}
                 placeholder="Required to save changes"
@@ -444,17 +444,17 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   avatarText: {
-    fontSize: 40,
+    fontSize: 46,
     fontWeight: 'bold',
     color: 'white',
   },
   username: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: 'bold',
     color: 'white',
   },
   email: {
-    fontSize: 14,
+    fontSize: 17,
     color: 'rgba(255,255,255,0.8)',
     marginTop: 5,
   },
@@ -467,12 +467,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   statNumber: {
-    fontSize: 22,
+    fontSize: 26,
     fontWeight: 'bold',
     color: 'white',
   },
   statLabel: {
-    fontSize: 12,
+    fontSize: 14,
     color: 'rgba(255,255,255,0.7)',
     marginTop: 2,
   },
@@ -484,7 +484,7 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   sectionTitle: {
-    fontSize: 16,
+    fontSize: 19,
     fontWeight: 'bold',
     color: '#6200ee',
     marginBottom: 10,
@@ -504,7 +504,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   modalTitle: {
-    fontSize: 22,
+    fontSize: 26,
     fontWeight: 'bold',
     textAlign: 'center',
     color: '#333',
@@ -518,7 +518,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   togglePasswordText: {
-    fontSize: 16,
+    fontSize: 18,
     color: '#6200ee',
     fontWeight: '600',
   },
@@ -531,13 +531,13 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   warningText: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'bold',
     color: '#e65100',
     marginBottom: 5,
   },
   warningSubtext: {
-    fontSize: 14,
+    fontSize: 16,
     color: '#bf360c',
     lineHeight: 20,
   },

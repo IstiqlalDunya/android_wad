@@ -70,7 +70,7 @@ const NoteEditScreen = ({ route, navigation }: any) => {
     <ScrollView style={styles.container} keyboardShouldPersistTaps="handled">
       {/* Title */}
       <View style={styles.section}>
-        <Text style={styles.fieldLabel}>TITLE *</Text>
+        <Text style={styles.fieldLabel}>TITLE</Text>
         <TextInput
           style={styles.titleInput}
           placeholder="Note title…"
