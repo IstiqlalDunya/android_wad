@@ -9,7 +9,7 @@ import {
   TextInput,
 } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import { RichTextToolbar, AppButton, Colors } from '../components/UI';
+import { AppButton, Colors } from '../components/UI';
 import { useAuth } from '../AuthContext';
 import Config from '../Config';
 import Icons from 'react-native-vector-icons/Ionicons';
@@ -37,14 +37,7 @@ const NoteCreateScreen = ({ route, navigation }: any) => {
     setContent(newContent);
   };
 
-  const handleBold = () => wrapSelection('**', '**');
-  const handleItalic = () => wrapSelection('*', '*');
-  const handleBullet = () => {
-    const { start } = selection;
-    const lineStart = content.lastIndexOf('\n', start - 1) + 1;
-    const newContent = content.slice(0, lineStart) + '• ' + content.slice(lineStart);
-    setContent(newContent);
-  };
+
 
   const handleSave = () => {
     if (!title.trim()) { Alert.alert('Validation Error', 'Title is required'); return; }
@@ -103,7 +96,6 @@ const NoteCreateScreen = ({ route, navigation }: any) => {
       {/* Content with Toolbar */}
       <View style={styles.section}>
         <Text style={styles.fieldLabel}>CONTENT</Text>
-        <RichTextToolbar onBold={handleBold} onItalic={handleItalic} onBullet={handleBullet} />
         <TextInput
           ref={contentRef}
           style={styles.contentInput}

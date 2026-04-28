@@ -249,11 +249,7 @@ const ProfileScreen = ({ navigation }: any) => {
       {/* Info Section */}
       <View style={styles.infoSection}>
         <Text style={styles.sectionTitle}>Account Information</Text>
-        <InputWithLabel
-          label="User ID"
-          editable={false}
-          value={user?.id?.toString() || ''}
-        />
+        
         <InputWithLabel
           label="Username"
           editable={false}
