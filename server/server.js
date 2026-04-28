@@ -118,6 +118,19 @@ app.post('/api/login', (req, res) => {
 
 // ===== USER PROFILE ROUTES =====
 
+
+// Get all users (for admin/debug purposes)
+app.get('/api/users', (req, res) => {
+  const db = getDb();
+  db.all('SELECT id, username, email, created_at FROM users ORDER BY id', [], (err, rows) => {
+    db.close();
+    if (err) {
+      return res.status(500).json({ error: 'Database error: ' + err.message });
+    }
+    res.json(rows || []);
+  });
+});
+
 // Get user profile with note count
 app.get('/api/users/:id', (req, res) => {
   const db = getDb();
@@ -233,6 +246,17 @@ app.delete('/api/users/:id', (req, res) => {
         });
       });
     });
+  });
+});
+
+
+// Get all notes (for viewer page)
+app.get('/api/notes/all', (req, res) => {
+  const db = getDb();
+  db.all('SELECT * FROM notes ORDER BY updated_at DESC', [], (err, rows) => {
+    db.close();
+    if (err) return res.status(500).json({ error: err.message });
+    res.json(rows || []);
   });
 });
 
