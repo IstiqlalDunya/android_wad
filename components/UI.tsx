@@ -154,7 +154,7 @@ const buttonStyles = StyleSheet.create({
   },
   buttonText: {
     color: 'white',
-    fontSize: 15,
+    fontSize: 18,
     fontWeight: '700',
     letterSpacing: 0.3,
   },
