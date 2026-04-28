@@ -160,7 +160,7 @@ export const FormattedText = ({ content }: { content: string }) => {
   );
 };
 
-// ─── Styles ───────────────────────────────────────────────────────────────────
+// ─── Styles ───
 const buttonStyles = StyleSheet.create({
   button: {
     marginVertical: 6,

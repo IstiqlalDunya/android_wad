@@ -50,7 +50,7 @@ const HomeScreen = ({ navigation }: any) => {
     newSocket.on('note_sync', (data: any) => { if (data.note?.user_id === user?.id) loadNotes(); });
     newSocket.on('error', console.error);
     setSocket(newSocket);
-    return () => newSocket.disconnect();
+    return () => {newSocket.disconnect();};
   }, [user]);
 
   // ── Filter & Sort ──────────────────────────────────────────────────────────
